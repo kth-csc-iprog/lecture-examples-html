@@ -1,0 +1,10 @@
+
+<input ng-model="query"/>
+
+{{query}}
+
+<div ng-repeat="dish in dishes | filter:query">
+    <h2>{{dish.name}}</h2>
+    <div ng-if="dish.type == 'starter'">STARTER</div>
+    <!-- <img ng-src="{{dish.image}}"/> -->
+</div>
