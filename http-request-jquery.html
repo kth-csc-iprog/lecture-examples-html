@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTTP Request JQuery</title>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+  syncRequest = function () {
+    $.ajax({
+      type: 'GET',
+      // You need to get your API key from api.BigOven.com
+      url: 'http://api.bigoven.com/recipes?pg=1&rpp=11&api_key=YOUR_KEY',
+      dataType: 'json',
+      success: function(data){
+        console.log(data);
+      },
+      error: function(xhr,status,error) {
+        console.error(error);
+      }
+    })
+  }
+</script>
+</head>
+
+<body>
+  <button onclick="syncRequest()">Send Request</button>
+  <select>
+    <option>A</option>
+    <option>B</option>
+  </select>
+</body>
+
+</html>
